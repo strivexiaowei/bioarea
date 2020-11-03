@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+    <form class="layui-form bio-form-box" action="" lay-filter="example">
+        <div class="layui-col-xs12">
+            <div class="layui-form-item" id="bioarea-wrap">
+                <label class="layui-form-label add-width required">所属地域</label>
+                <label class="layui-form-label small-width">省</label>
+                <div class="layui-input-inline">
+                    <select style="width: 100px;" class="level-1-select" lay-filter="#bioarea-wrap1level"
+                        name="province">
+                        <option value="">请选择省</option>
+                    </select>
+                </div>
+                <label class="layui-form-label small-width">市</label>
+                <div class="layui-input-inline">
+                    <select class="level-2-select" lay-filter="#bioarea-wrap2level" name="city">
+                        <option value="">请选择市</option>
+                    </select>
+                </div>
+                <label class="layui-form-label small-width">区</label>
+                <div class="layui-input-inline">
+                    <select class="level-3-select" lay-filter="#bioarea-wrap3level" name="county">
+                        <option value="">请选择市</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    <script src="./layui/layui.js"></script>
+    <script>
+        layui.config({
+            base: './js/'
+        }).extend({
+            bioarea: 'bioarea'
+        });
+    </script>
+    <script>
+        layui.use(['form', 'bioarea'], function() {
+           
+            var form = layui.form
+                , bioarea = layui.bioarea
+
+            bioarea.render({
+                elem: '#bioarea-wrap',
+                defaultData: {
+                    provinceCode: '110000',
+                    cityCode: '110100',
+                    countyCode: '110113'
+                },
+                form
+            })
+            //监听提交
+            form.on('submit(demo1)', function(data) {
+                layer.alert(JSON.stringify(data.field), {
+                    title: '最终的提交信息'
+                })
+                return false;
+            });
+
+
+            //表单取值
+            layui.$('#LAY-component-form-getval').on('click', function() {
+                var data = form.val('example');
+                console.log(data);
+                alert(JSON.stringify(data));
+            });
+
+        });
+    </script>
+</body>
+
+</html>

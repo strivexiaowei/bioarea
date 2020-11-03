@@ -1,0 +1,371 @@
+$base-color: #00A155;
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.show {
+    display: block !important;
+  }
+
+.clearfix:after {
+    clear: both;
+}
+
+.text-overflow {
+    white-space: nowrap;   //规定段落中的文本不进行换行
+    text-overflow:ellipsis;
+    overflow:hidden;
+  }
+a {
+    color: #333;
+    text-decoration-line: none;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.pull-left {
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.header-content {
+   display: flex;
+}
+
+.header-content .header-logo {
+   width: 300px;
+   height: 90px;
+   margin-right: 70px;
+   background-size: contain;
+   background-position: left center;
+   background-repeat: no-repeat;
+}
+
+.header-content {
+   display: flex;
+}
+
+.bio-header-nav-wrap {
+    height: 90px;
+}
+
+.bio-header-nav-wrap .bio-nav-box {
+   box-sizing: border-box;
+   position: relative;
+   float: left;
+   height: 100%;
+   padding: 36px 16px;
+
+   .bio-nav-title {
+       width: 100%;
+       height: 100%;
+   }
+
+   .bio-nav-title::before {
+      position: absolute;
+      right: 50%;
+      bottom: 0;
+      width: 0px;
+      height: 3px;
+      margin: 0;
+      content: '';
+      background-color: $base-color;
+   }
+   .bio-nav-title::after {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0px;
+      height: 3px;
+      margin: 0;
+      content: '';
+      background-color: $base-color;
+   }
+
+   .bio-nav-children {
+       position: absolute;
+       box-sizing: border-box;
+       left: 0;
+       right: 0;
+       margin: auto;
+       top: 90px;
+       min-width: 140px;
+       max-height: 0px;
+       background-color: #fff;
+       box-shadow: 0px 3px 5px 0px rgba(195, 195, 195, 0.3);
+       overflow: hidden;
+
+       .bio-nav-sub-title {
+           box-sizing: border-box;
+           padding: 6px 8px;
+           min-width: 140px;
+           font-size: 14px;
+           color: #333;
+       }
+   }
+}
+
+.bio-header-nav-wrap .bio-nav-box:hover, 
+.bio-header-nav-wrap .bio-nav-box.this-active {
+   .bio-nav-title a {
+      color: $base-color;
+      transition: color .5s;
+   }
+
+   .icon-pic {
+       width: 34px;
+       height: 34px;
+   }
+
+   .bio-nav-title::before {
+       width: 48%;
+       transition: width .5s;
+   }
+
+   .bio-nav-title::after {
+       width: 48%;
+       transition: width .5s;
+   }
+}
+
+.bio-header-nav-wrap .bio-nav-box:hover {
+    .bio-nav-children {
+        max-height: 300px;
+        transition: max-height 1s;
+    }
+}
+
+.bio-header-nav-wrap .bio-nav-title {
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    .iconfont {
+        font-size: 20px;
+    }
+}
+
+.bio-header-nav-wrap .bio-nav-box.line::after {
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    content: '';
+    background-color: #dedede;
+}
+
+.bio-banner-wrap {
+   height: 600px;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-color: #fff;
+}
+
+.footer-wrap {
+    background-color: #4D4D4D;
+}
+
+.footer-chunk-box {
+    display: flex;
+    padding: 20px 0;
+}
+
+.footer-link-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.footer-link-title {
+    padding-bottom: 12px;
+}
+
+.footer-link-title .link-name {
+    margin-right: 4px;
+    color: #DEE8EC;
+    font-size: 20px;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+.footer-link-title .link-tag {
+    padding: 8px 0;
+    color: #00A155;
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+.footer-link-a {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #b3b3b3;
+}
+
+.footer-link-a:hover {
+    color: #f4f4f4;
+}
+
+.footer-info-text {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #b3b3b3;
+}
+.footer-bottom-text {
+    padding: 16px;
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    border-top: 1px solid #999;
+}
+
+.footer-content {
+    position: relative;
+}
+
+.footer-qr-code-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+.qr-code-box {
+    display: inline-block;
+    width: 168px;
+    margin-left: 100px;
+}
+.qr-code-box  .qr-code-img {
+    width: 168px;
+    height: 168px;
+    background-size: 100%;
+    background-color: #999;
+}
+
+.qr-code-box  .qr-code-name {
+    padding-top: 4px;
+    font-size: 16px;
+    text-align: center;
+    color: #B3B3B3;
+}
+
+.content-main {
+    min-height: 320px;
+}
+
+.release-page-teb {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.release-page-teb  .teb-item,
+.release-page-teb  .teb-center-line {
+    padding: 12px 0;
+    font-size: 16px;
+    color: #999;
+}
+
+.release-page-teb  .teb-center-line {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.release-page-teb  .teb-item.active {
+    position: relative;
+    color: #00A155;
+}
+
+.release-page-teb  .teb-item.active::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    content: '';
+    background-color: #00A155;
+}
+
+.release-form-title {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #00A155;
+}
+
+.layui-form-label.required::before {
+    content: '*';
+    color: red;
+    padding: 0 2px;
+}
+
+.layui-form-label.add-width {
+    width: 140px;
+}
+.layui-form-label.small-width {
+    width: 40px;
+}
+
+.layui-input-block.add-width {
+    margin-left: 170px;
+}
+
+.form-btn-wrap {
+    padding: 60px 60px 60px 130px;
+    text-align: center;
+}
+
+.bio-form-box {
+    padding: 10px 80px 10px;
+}
+
+.bio-input-checkbox-wrap {
+    display: flex;
+}
+
+.bio-input-checkbox-wrap .layui-input {
+    width: 160px;
+}
+.bio-label-subtit {
+    font-size: 12px;
+    color: #666;
+}
+
+.input-important-note {
+    color:red;
+}
+
+.bio-wanyuan-form-box {
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.bio-wanyuan-form-box  .layui-input {
+    margin-right: 10px;
+    width: 100px;
+}
